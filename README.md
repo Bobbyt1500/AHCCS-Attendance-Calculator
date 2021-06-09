@@ -13,3 +13,6 @@
 2. Run CMake to configure the project for MinGW ```cmake ../ -G "MinGW Makefiles"```
 3. Build the project with mingw-w64 ```mingw32-make```
 4. MinGW will create a release directory in build. This will contain the executable for the calculator.
+
+### Notes:
+To toggle the raylib debugging console, comment or uncomment line 16 in [CMakeLists.txt](CMakeLists.txt)
