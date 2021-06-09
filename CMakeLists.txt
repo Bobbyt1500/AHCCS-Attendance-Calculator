@@ -12,11 +12,12 @@ set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/release)
 
 # Add flags to remove the raylib debugging console
+# Comment out the below line to include the debugging console
 set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wl,--subsystem,windows")
 
 # Copy program files to the release directory
 file(COPY ${CMAKE_SOURCE_DIR}/programfiles/Resources DESTINATION ${CMAKE_BINARY_DIR}/release)
-file(COPY ${CMAKE_SOURCE_DIR}/programfiles/Courses DESTINATION ${CMAKE_BINARY_DIR}/release)
+file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/release/Courses)
 file(COPY ${CMAKE_SOURCE_DIR}/programfiles/userdata.json DESTINATION ${CMAKE_BINARY_DIR}/release)
 
 include_directories("include")
